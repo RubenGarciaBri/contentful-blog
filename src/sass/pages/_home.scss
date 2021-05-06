@@ -14,7 +14,7 @@
 }
 
 .logo {
-  width: 135px;
+  width: 125px;
 
   @include respond(tab-port) {
     margin-bottom: 15px;
@@ -201,6 +201,7 @@
     padding: 8px 24px;
     background-color: $terciary-color;
     color: #fff;
+    font-size: 1.6rem;
   }
 
   &__bottomList {
