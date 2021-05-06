@@ -54,13 +54,12 @@ const BlogIndex = ({ data, location }) => {
               />
             )
           })}
-        
         </section>
         <aside className="sidebar-section">
-          
+          <Sidebar />
         </aside>
         <section className="cta-section">
-          
+          <CallToAction />
         </section>
       </div>
 
