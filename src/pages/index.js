@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Nav from '../components/Nav'
+import Header from '../components/Header'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -27,7 +28,10 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-      <Nav />
+      <header class="hero-section">
+        <Nav />
+        <Header />
+      </header>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.node.title || post.node.slug
