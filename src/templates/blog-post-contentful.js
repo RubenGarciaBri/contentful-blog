@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Nav from '../components/Nav'
+import BlogPost from '../components/BlogPost'
 
 const BlogPostContentfulTemplate = ({ data, location }) => {
   const post = data.contentfulPost
@@ -18,15 +20,31 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
         title={post.title}
         description={post.subtitle || post.excerpt}
       />
+      <header className="hero-section">
+        <Nav />
+      </header>
+        <section class="blogpost-section container">
+          <BlogPost
+            title={post.title}
+            subtitle={post.subtitle}
+            author={post.author}
+            content={post.content.raw}
+            imageUrl={post.image.fluid.src}
+            createdAt={post.createdAt}
+          />
+        </section>
+
+
+
       
-      <article
+      {/* <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
         <header>
           <h1 itemProp="headline">{post.title}</h1>
-          {/* <p>{post.frontmatter.date}</p> */}
+          <p>{post.frontmatter.date}</p>
         </header>
         <StaticImage src={image} alt=''/>
         <section
@@ -63,7 +81,7 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </Layout>
   )
 }
@@ -85,6 +103,8 @@ export const pageQuery = graphql`
       title
       subtitle
       author
+      category  
+      createdAt(fromNow: true)
       image {
         fluid {
           src

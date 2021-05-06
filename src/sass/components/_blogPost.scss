@@ -1,36 +1,36 @@
-.post-section {
-  grid-area: post;
+.blogpost-section {
+  padding: 0 2rem;
+}
+
+.post-header {
+  width: 100%;
+  height: 400px;
+  background-image: url('../images/travel1.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include respond(phone) {
+    height: 200px;
+  }
 }
 
 .post {
+  position: relative;
+  top: -85px;
+  max-width: 800px;
+  margin: 0 auto;
   box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08),
     0 6px 6px rgba(0, 0, 0, 0.08);
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
+  padding: 50px;
 
-  &__imgWrapper {
-    width: 100%;
-    height: 400px;
-    background-image: url('../images/travel1.jpg');
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    @include respond(phone) {
-      height: 200px;
-    }
+  @include respond(tab-port) {
+    padding: 20px;
   }
-
-  &__main {
-    padding: 40px;
-
-    @include respond(tab-port) {
-      padding: 20px;
-    }
-
-  }
-
+  
   &__title {
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -93,25 +93,5 @@
         }
       }
     }
-  }
-}
-
-.grid-blogpost {
-  margin-bottom: 50px;
-  padding: 0 15px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 25px;
-  grid-template-areas:
-    "post sidebar"
-    "post sidebar";
-
-  @include respond(tab-port) {
-    column-gap: 0;
-    row-gap: 25px;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "post"
-      "sidebar";
   }
 }
