@@ -1,0 +1,101 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  @include respond(phone) {
+    padding-bottom: 10px;
+  }
+}
+
+.logo {
+  width: 125px;
+
+  @include respond(tab-port) {
+    margin-bottom: 15px;
+    width: 100px;
+  }
+
+  @include respond(phone) {
+    margin-top: 15px;
+  }
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+  &__item a {
+    color: $black-color;
+    padding: 7px 24px;
+    display: inline-block;
+    font-weight: 700;
+
+    @include respond(tab-port) {
+      padding: 7px 12px;
+    }
+
+    @include respond(phone) {
+      padding: 5px 0;
+    }
+  }
+}
+
+.hero-section {
+  margin-bottom: 35px;
+  padding: 0 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 10px;
+  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .4);
+  padding: 60px;
+  border-radius: 3px;
+  background: linear-gradient(to top left, rgba(255, 154, 158, 0.85), rgba(250, 208, 196, 0.85)),
+    url('../images/herobg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include respond(tab-port) {
+    padding: 25px;
+  }
+
+  &__heading {
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: $terciary-color;
+
+    &--stylishText {
+      font-family: 'Permanent Marker',
+        cursive;
+    }
+  }
+
+  &__subheading {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: $terciary-color;
+    max-width: 600px;
+    margin: 5px auto 20px auto;
+  }
+
+  &__btn {
+    color: #fff;
+    background-color: $terciary-color;
+  }
+
+}

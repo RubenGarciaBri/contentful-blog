@@ -1,0 +1,23 @@
+.cta {
+  &-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  &__text {
+    color: $primary-color;
+    padding: 0 20px;
+  }
+
+  &__btn {
+    background: $terciary-color;
+    color: #fff;
+    margin-top: 10px;
+  }
+}

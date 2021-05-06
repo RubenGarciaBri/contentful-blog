@@ -1,0 +1,95 @@
+.postCard {
+  position: relative;
+  display: flex;
+  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08),
+  0 6px 6px rgba(0, 0, 0, 0.08);
+  background-size: cover;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fff;
+
+    @include respond(phone) {
+      flex-direction: column;
+      height: 500px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 25px;;
+    }
+
+    &__left {
+      flex-basis: 35%;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+
+      @include respond(tab-land) {
+        flex-basis: 40%; 
+      }
+
+      @include respond(phone) {
+        height: 100%;
+        flex-basis: 50%;
+      }
+  }
+
+
+  &__right {
+    flex-basis: 65%;
+    padding: 20px 20px 58px 40px;
+    position: relative;
+
+    @include respond(tab-land) {
+      flex-basis: 60%;
+    }
+
+    @include respond(phone) {
+      flex-basis: 50%;
+    }
+  }
+
+  &__category {
+    text-transform: uppercase;
+    color: $secondary-color;
+    letter-spacing: 1px;
+  }
+
+  &__title {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+
+  &__text {
+    margin-bottom: 7px;
+  }
+
+  &__btn {
+    padding: 8px 24px;
+    background-color: $terciary-color;
+    color: #fff;
+    font-size: 1.6rem;
+  }
+
+  &__bottomList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    padding-left: 33px;
+
+    &-item {
+      padding: 0 10px;
+      color: $text-color;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__icon {
+    margin-left: 5px;
+  }
+}

@@ -5,4 +5,10 @@
 @import 'base/base';
 
 @import 'pages/home';
-@import 'pages/blogpost';
+
+@import 'components/blogPost';
+@import 'components/cta';
+@import 'components/footer';
+@import 'components/header';
+@import 'components/postCard';
+@import 'components/sidebar';

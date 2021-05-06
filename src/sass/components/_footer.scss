@@ -1,0 +1,50 @@
+.footer {
+  
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(phone) {
+      flex-direction: column;
+    }
+
+    &Item {
+      @include respond(phone) {
+        margin-bottom: 5px;
+      }
+
+      &:not(:first-child) a {
+        margin-left: 20px;
+
+        @include respond(phone) {
+          margin: 0;
+        }
+      }
+
+      & a {
+        color: #fff;
+
+      }
+    }
+
+    & li:not(:last-child) {
+      padding-right: 20px;
+      border-right: 1px solid #ccc;
+
+      @include respond(phone) {
+        padding: 0;
+        border: 0;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 150px;
+  }
+
+  &__imgWrapper {
+    text-align: center;
+    margin-top: 25px;
+  }
+}
