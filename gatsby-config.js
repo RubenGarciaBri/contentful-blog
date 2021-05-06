@@ -6,16 +6,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Living a mindful life`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Marina Jenkins`,
+      summary: `who lives and works in Tampa, Florida helping people level up their inner game.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `A personal development blog built with Gatsby.`,
   },
   plugins: [
     `gatsby-plugin-image`,
