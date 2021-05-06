@@ -2,9 +2,8 @@
 import "typeface-montserrat"
 import "typeface-merriweather"
 // CSS Files
-import "./src/styles/normalize.css"
-import "./src/styles/base.css"
-import "./src/styles/main.css"
+import "./src/sass/normalize.css"
+import "./src/sass/main.scss"
 
 
 // import "./src/styles/style.css"
