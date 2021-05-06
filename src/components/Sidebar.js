@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
 import profileImg from '../images/profile.jpg'
+import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
@@ -15,16 +16,16 @@ const Sidebar = () => {
           </p>
           <ul className="sidebarTop__socialList">
             <li className="sidebarTop__socialList-item">
-              <Link to="#"><i
-                  className="fab fa-facebook sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-facebook"></i></Link>
+              <Link to="#"><FaFacebookSquare
+                  className="fab fa-facebook sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-facebook"></FaFacebookSquare></Link>
             </li>
             <li className="sidebarTop__socialList-item">
-              <Link to="#"><i
-                  className="fab fa-linkedin sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-linkedin"></i></Link>
+              <Link to="#"><FaTwitterSquare
+                  className="fab fa-linkedin sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-linkedin"></FaTwitterSquare></Link>
             </li>
             <li className="sidebarTop__socialList-item">
-              <Link to="#"><i
-                  className="fab fa-youtube sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-youtube"></i></Link>
+              <Link to="#"><FaYoutubeSquare
+                  className="fab fa-youtube sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-youtube"></FaYoutubeSquare></Link>
             </li>
           </ul>
         </div>
