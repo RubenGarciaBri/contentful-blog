@@ -149,12 +149,12 @@
     }
 
     &__left {
-     
       flex-basis: 35%;
       width: 100%;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
 
       @include respond(tab-land) {
         flex-basis: 40%; 
@@ -293,7 +293,7 @@
   }
 
   &Middle {
-    margin-top: 45px;
+    
 
     &__heading {
       text-transform: uppercase;

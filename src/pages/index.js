@@ -56,6 +56,7 @@ const BlogIndex = ({ data, location }) => {
                 author={post.node.author}
                 category={post.node.category}
                 createdAt={post.node.createdAt}
+                imageUrl={post.node.image.fluid.src}
               />
             )
           })}
@@ -96,6 +97,11 @@ export const pageQuery = graphql`
           slug
           category
           createdAt(fromNow: true)
+          image {
+            fluid {
+              src
+            }
+          }
         }
       }
     }  
