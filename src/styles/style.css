@@ -1,4 +1,4 @@
-/* CSS Custom Properties Definitions */
+CSS Custom Properties Definitions
 
 :root {
   --maxWidth-none: "none";
@@ -331,3 +331,4 @@ a:focus {
     list-style-position: inside;
   }
 }
+
