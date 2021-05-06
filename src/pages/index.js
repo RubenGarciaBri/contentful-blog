@@ -61,7 +61,10 @@ const BlogIndex = ({ data, location }) => {
           })}
         </section>
         <aside className="sidebar-section">
-          <Sidebar />
+          <Sidebar
+            title='About Me'
+            description="Hi, I'm Marina and I'm a full time writter at FashionNow magazine. I've recently started this blog as a personal project to share my thoughts on travel, fitness, fashion and lifetime in general."
+          />
         </aside>
         <section className="cta-section">
           <CallToAction
