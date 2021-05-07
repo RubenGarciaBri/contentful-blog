@@ -1,50 +1,31 @@
 .footer {
-  
-  &__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 2rem 10px;
 
-    @include respond(phone) {
-      flex-direction: column;
-    }
-
-    &Item {
-      @include respond(phone) {
-        margin-bottom: 5px;
-      }
-
-      &:not(:first-child) a {
-        margin-left: 20px;
-
-        @include respond(phone) {
-          margin: 0;
-        }
-      }
-
-      & a {
-        color: #fff;
-
-      }
-    }
-
-    & li:not(:last-child) {
-      padding-right: 20px;
-      border-right: 1px solid #ccc;
-
-      @include respond(phone) {
-        padding: 0;
-        border: 0;
-      }
-    }
+  & p {
+    color: #fff;
+    font-weight: inherit;
   }
 
-  &__img {
-    max-width: 150px;
+  & a {
+    color: #ccc;
+    margin-left: 4px;
+    font-weight: 700;
+    font-size: inherit;
   }
 
-  &__imgWrapper {
-    text-align: center;
-    margin-top: 25px;
-  }
+  // &__img {
+  //   max-width: 150px;
+  // }
+
+  // &__imgWrapper {
+  //   text-align: center;
+  //   margin-top: 25px;
+  // }
 }

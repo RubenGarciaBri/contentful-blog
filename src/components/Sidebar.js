@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
 import profileImg from '../images/profile.jpg'
-import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa";
+import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa"
 
 const Sidebar = ({ title, description }) => {
   return (
