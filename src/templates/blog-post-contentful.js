@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -28,7 +27,7 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
             title={post.title}
             subtitle={post.subtitle}
             author={post.author}
-            content={post.content.raw}
+            content={post.content}
             imageUrl={post.image.fluid.src}
             createdAt={post.createdAt}
           />
