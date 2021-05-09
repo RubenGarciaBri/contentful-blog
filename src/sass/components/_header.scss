@@ -59,7 +59,8 @@
 .hero {
   text-align: center;
   margin-top: 10px;
-  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, .4);
+  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08),
+  0 6px 6px rgba(0, 0, 0, 0.08);
   padding: 60px;
   border-radius: 3px;
   background: linear-gradient(to top left, rgba(255, 154, 158, 0.85), rgba(250, 208, 196, 0.85)),
@@ -96,6 +97,8 @@
   &__btn {
     color: #fff;
     background-color: $terciary-color;
+    font-size: 1.4rem;
+    outline: none;
   }
 
 }

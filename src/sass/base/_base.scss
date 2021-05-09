@@ -112,3 +112,19 @@ img {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.btn {
+  &:hover {
+    color: #ccc;
+  }
+}
+
+a {
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+p {
+  padding: 0;
+}

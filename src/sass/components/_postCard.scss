@@ -38,7 +38,7 @@
 
   &__right {
     flex-basis: 65%;
-    padding: 20px 20px 58px 40px;
+    padding: 32px 20px 20px 33px;
     position: relative;
 
     @include respond(tab-land) {
@@ -54,40 +54,35 @@
     text-transform: uppercase;
     color: $secondary-color;
     letter-spacing: 1px;
+    font-size: 1.6rem;
+    margin-bottom: -2px;
   }
 
   &__title {
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 0px;
+    margin-bottom: 3px;
   }
 
   &__text {
-    margin-bottom: 7px;
+    margin-bottom: 13px;
   }
 
   &__btn {
     padding: 8px 24px;
     background-color: $terciary-color;
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
   }
 
-  &__bottomList {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
-    bottom: 12px;
-    left: 0;
-    padding-left: 33px;
-
-    &-item {
-      padding: 0 10px;
-      color: $text-color;
-      font-size: 1.4rem;
-    }
+  &__date {
+    display: block;
+    padding: 0 10px;
+    color: $text-color;
+    font-size: 1.2rem;
   }
+  
 
   &__icon {
     margin-left: 5px;

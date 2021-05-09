@@ -88,7 +88,7 @@ const BlogIndex = ({ data, location }) => {
         <aside className="sidebar-section">
           <Sidebar
             title='About Me'
-            description="Hi, I'm Marina and I'm a full time writter at FashionNow magazine. I've recently started this blog as a personal project to share my thoughts on travel, fitness, fashion and lifetime in general."
+            description="Hi, my name is Marina and I'm a full-time journalist and fashion expert. I've recently started this blog to share my message with the world."
           />
         </aside>
         <section className="cta-section">

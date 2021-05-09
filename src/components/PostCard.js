@@ -23,11 +23,7 @@ const PostCard = ({ slug, author, title, subtitle, category, createdAt, imageUrl
         </h4>
         <p className="postCard__text">{subtitle}</p>
         <Link to={`/${slug}`} className="btn postCard__btn">Read More</Link>
-        <ul className="postCard__bottomList">
-          <li className="postCard__bottomList-item">{createdAt}</li>
-          {/* <li className="postCard__bottomList-item">112 <i className="far fa-heart postCard__icon"></i></li>
-          <li className="postCard__bottomList-item">3<i className="far fa-comment postCard__icon"></i></li> */}
-        </ul>
+        <small className="postCard__date">{createdAt}</small>     
       </div>
     </div>
   )
