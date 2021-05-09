@@ -24,7 +24,7 @@ const options = {
   },
 }
 
-const BlogPost = ({ title, subtitle, author, category, content, imageUrl, createdAt}) => {
+const BlogPost = ({ title, subtitle, author, category, content, imageUrl, createdAt, previous, next}) => {
   return (
     <>
       <div
@@ -39,6 +39,8 @@ const BlogPost = ({ title, subtitle, author, category, content, imageUrl, create
         <article className="post__content">{renderRichText(content, options)}</article>
         <small>{createdAt}</small>
       </article>
+      <span>{previous}</span>
+      <span>{next}</span>
     </>
   )
 }

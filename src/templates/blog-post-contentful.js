@@ -6,12 +6,13 @@ import Seo from "../components/seo"
 import Nav from '../components/Nav'
 import BlogPost from '../components/BlogPost'
 
-const BlogPostContentfulTemplate = ({ data, location }) => {
+const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
   const post = data.contentfulPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  const { previousPost, nextPost } = pageContext
   const image = `http:${data.contentfulPost.image.fluid.src}`
 
+  console.log(pageContext)
   
   return (
     <Layout location={location} title={siteTitle}>
@@ -30,6 +31,8 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
             content={post.content}
             imageUrl={post.image.fluid.src}
             createdAt={post.createdAt}
+            // previous={previous}
+            // next={next}
           />
         </section>
 

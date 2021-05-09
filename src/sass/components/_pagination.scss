@@ -1,0 +1,24 @@
+.pagination {
+
+}
+
+.page-item {
+
+  & button {
+    height: 35px;
+    width: 35px;
+    font-size: 1.4rem;
+    color: $secondary-color;
+  }
+
+  &:hover {
+    & button {
+      color: $secondary-color;
+    }
+  }
+  
+}
+
+.page-link {
+
+}

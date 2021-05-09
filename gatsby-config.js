@@ -5,6 +5,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
+  pathPrefix: `/blog`,
   siteMetadata: {
     title: `Living a mindful life`,
     author: {

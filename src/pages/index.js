@@ -1,6 +1,6 @@
 import * as React from "react"
+import { useState, useEffect }from "react"
 import { Link, graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,11 +9,29 @@ import Header from '../components/Header'
 import PostCard from '../components/PostCard'
 import Sidebar from '../components/Sidebar'
 import CallToAction from '../components/CallToAction'
+import Pagination from '../components/Pagination'
+
 
 const BlogIndex = ({ data, location }) => {
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber)
+
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allContentfulPost.edges
-  console.log(posts)
+
+  // Set posts after API call
+  useEffect(() => {
+    setPosts(data.allContentfulPost.edges)
+  }, [])
+
 
   if (posts.length === 0) {
     return (
@@ -44,7 +62,7 @@ const BlogIndex = ({ data, location }) => {
       </header>
       <div className="home-grid">
         <section className="blog-section">
-          {posts.map(post => {
+          {currentPosts.map(post => {
             return (
               <PostCard
                 key={post.node.slug}
@@ -57,9 +75,15 @@ const BlogIndex = ({ data, location }) => {
                 category={post.node.category}
                 createdAt={post.node.createdAt}
                 imageUrl={post.node.image.fluid.src}
+                content={post.node.content}
               />
             )
           })}
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
         </section>
         <aside className="sidebar-section">
           <Sidebar
@@ -101,6 +125,9 @@ export const pageQuery = graphql`
             fluid {
               src
             }
+          }
+          content {
+            raw
           }
         }
       }
