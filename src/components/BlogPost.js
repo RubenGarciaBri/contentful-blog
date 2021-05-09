@@ -1,6 +1,7 @@
 import React from 'react'
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
+import { Pager } from './Pager'
 
 const Bold = ({ children }) => <span style={{fontWeight: 'bold'}}>{children}</span>
 const Text = ({ children }) => <p style={{fontSize: '18px', lineHeight: '32px'}}>{children}</p>
@@ -39,6 +40,7 @@ const BlogPost = ({ title, subtitle, author, category, content, imageUrl, create
         <article className="post__content">{renderRichText(content, options)}</article>
         <small>{createdAt}</small>
       </article>
+      
     </>
   )
 }

@@ -30,6 +30,8 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
             content={post.content}
             imageUrl={post.image.fluid.src}
             createdAt={post.createdAt}
+            previous={previous}
+            next={next}
           />
         </section>
 

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,6 +8,8 @@ import Header from '../components/Header'
 import PostCard from '../components/PostCard'
 import Sidebar from '../components/Sidebar'
 import CallToAction from '../components/CallToAction'
+import Pager from '../components/Pager'
+import AllPosts from '../templates/allPosts'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -44,22 +45,7 @@ const BlogIndex = ({ data, location }) => {
       </header>
       <div className="home-grid">
         <section className="blog-section">
-          {posts.map(post => {
-            return (
-              <PostCard
-                key={post.node.slug}
-                itemScope
-                itemType="http://schema.org/Article"
-                slug={post.node.slug}
-                title={post.node.title}
-                subtitle={post.node.subtitle}
-                author={post.node.author}
-                category={post.node.category}
-                createdAt={post.node.createdAt}
-                imageUrl={post.node.image.fluid.src}
-              />
-            )
-          })}
+          <AllPosts />
         </section>
         <aside className="sidebar-section">
           <Sidebar
