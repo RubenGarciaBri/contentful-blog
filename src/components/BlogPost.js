@@ -1,7 +1,8 @@
 import React from 'react'
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
-
+import RelatedPost from './RelatedPost'
+import { shuffle } from '../utils/helpers'
 const Bold = ({ children }) => <span style={{fontWeight: 'bold'}}>{children}</span>
 const Text = ({ children }) => <p style={{fontSize: '18px', lineHeight: '32px'}}>{children}</p>
 
@@ -24,7 +25,10 @@ const options = {
   },
 }
 
-const BlogPost = ({ title, subtitle, author, category, content, imageUrl, createdAt, previous, next}) => {
+const BlogPost = ({ title, subtitle, author, category, content, imageUrl, createdAt, allPosts}) => {
+  const filteredPosts = allPosts.filter(post => post.node.title !== title)
+  const shuffledPosts = shuffle(filteredPosts)
+
   return (
     <>
       <div
@@ -39,8 +43,14 @@ const BlogPost = ({ title, subtitle, author, category, content, imageUrl, create
         <article className="post__content">{renderRichText(content, options)}</article>
         <small>{createdAt}</small>
       </article>
-      <span>{previous}</span>
-      <span>{next}</span>
+      <div className="post__related">
+        <h4 className="post__relatedHeading">Related Posts</h4>
+        <div className="post__relatedWrapper">
+          {shuffledPosts.map(post => {
+            return <RelatedPost post={post}/>
+          })}
+        </div>
+      </div>
     </>
   )
 }

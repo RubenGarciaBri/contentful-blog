@@ -7,6 +7,7 @@ import Nav from '../components/Nav'
 import BlogPost from '../components/BlogPost'
 
 const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
+  const allPosts = data.allContentfulPost.edges
   const post = data.contentfulPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previousPost, nextPost } = pageContext
@@ -31,59 +32,9 @@ const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
             content={post.content}
             imageUrl={post.image.fluid.src}
             createdAt={post.createdAt}
-            // previous={previous}
-            // next={next}
+            allPosts={allPosts}
           />
         </section>
-
-
-
-      
-      {/* <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{post.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <StaticImage src={image} alt=''/>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.content.raw }}
-          itemProp="articleBody"
-        />
-        <hr />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav> */}
     </Layout>
   )
 }
@@ -116,6 +67,20 @@ export const pageQuery = graphql`
         raw
       }
     }
+    allContentfulPost {
+      edges {
+        node {
+          title
+          slug
+          createdAt(fromNow: true)
+          image {
+            fluid {
+              src
+            }
+          }
+        }
+      }
+    }  
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {
         slug
