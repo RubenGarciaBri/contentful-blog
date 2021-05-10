@@ -344,12 +344,13 @@ p {
 @media (max-width: 56.25em) {
   .main-nav {
     flex-direction: column;
+    padding: 15px 0 5px 0;
   }
 }
 
 @media (max-width: 37.5em) {
   .main-nav {
-    padding-bottom: 10px;
+    padding: 12px 0 0 0;
   }
 }
 

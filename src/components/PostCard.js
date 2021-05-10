@@ -9,10 +9,10 @@ const PostCard = ({ slug, author, title, subtitle, category, createdAt, imageUrl
       to={`/${slug}`}
       className="postCard__left"
       style={{
-        backgroundImage: `url(${imageUrl})`
+        backgroundImage: `url(${imageUrl})`,
+        opacity: '.9'
       }}
       >
-        {/* <img src={image} alt='Post main picture' className="postCard__left-img"/> */}
       </Link>
       <div className="postCard__right">
         <h5 className="postCard__category">{category}</h5>
