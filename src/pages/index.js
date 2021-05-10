@@ -55,7 +55,7 @@ const BlogIndex = ({ data, location }) => {
       <header className="hero-section">
         <Nav />
         <Header 
-          title='Living a Mindful Life'
+          title='Mindful Living'
           subtitle="A personal development blog about travel, wellness and life hacking that you'll love"
           cta='Subscribe Now'
         />

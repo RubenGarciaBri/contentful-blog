@@ -14,15 +14,27 @@
 }
 
 .logo {
-  width: 125px;
+  font-family: 'Permanent Marker',
+        cursive;
+  font-size: 28px;
+  font-weight: 800;
+  text-transform: capitalize;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+  color: $terciary-color;
+  padding: 7px 10px 7px 10px;
+
+  &-span {
+    color: $secondary-color;
+  }
 
   @include respond(tab-port) {
-    margin-bottom: 15px;
-    width: 100px;
+  
   }
 
   @include respond(phone) {
-    margin-top: 15px;
+  
   }
 }
 
@@ -74,24 +86,24 @@
   }
 
   &__heading {
+    font-size: 36px;
     font-weight: 400;
     text-transform: capitalize;
     line-height: 1.1;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: $terciary-color;
 
     &--stylishText {
-      font-family: 'Permanent Marker',
-        cursive;
+      font-weight: 800;
     }
   }
 
   &__subheading {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 400;
     color: $terciary-color;
     max-width: 600px;
-    margin: 5px auto 20px auto;
+    margin: 5px auto 25px auto;
   }
 
   &__btn {
