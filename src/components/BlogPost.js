@@ -2,6 +2,7 @@ import React from 'react'
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import RelatedPost from './RelatedPost'
+import AuthorBio from './AuthorBio'
 import { shuffle } from '../utils/helpers'
 const Bold = ({ children }) => <span style={{fontWeight: 'bold'}}>{children}</span>
 const Text = ({ children }) => <p style={{fontSize: '18px', lineHeight: '32px'}}>{children}</p>
@@ -41,8 +42,10 @@ const BlogPost = ({ title, subtitle, author, category, content, imageUrl, create
         <h5 className="post__category">{category}</h5>
         <h3 className="post__title">{title}</h3>
         <article className="post__content">{renderRichText(content, options)}</article>
-        <small>{createdAt}</small>
+        <small className="post__date">Published {createdAt}</small>
+        <AuthorBio />
       </article>
+      
       <div className="post__related">
         <h4 className="post__relatedHeading">Related Posts</h4>
         <div className="post__relatedWrapper">

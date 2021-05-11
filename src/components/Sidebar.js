@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import profileImg from '../images/profile.jpg'
 import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa"
 

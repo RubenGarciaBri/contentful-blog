@@ -5,12 +5,11 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
-  pathPrefix: `/blog`,
   siteMetadata: {
     title: `Living a mindful life`,
     author: {
       name: `Marina Jenkins`,
-      summary: `who lives and works in Tampa, Florida helping people level up their inner game.`,
+      summary: `who lives and works in Tampa, Florida helping people take their life to the next level.`,
     },
     description: `A personal development blog built with Gatsby.`,
   },

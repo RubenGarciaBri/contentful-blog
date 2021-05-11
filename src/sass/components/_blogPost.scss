@@ -38,6 +38,13 @@
   &__content{
   }
 
+  &__date {
+    display: block;
+    color: $text-color;
+    margin: 45px 0 10px 0;
+    font-size: 1.4rem;
+  }
+
   &__category {
     color: $secondary-color;
     margin-bottom: 5px;

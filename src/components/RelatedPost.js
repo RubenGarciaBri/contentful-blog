@@ -17,7 +17,6 @@ const RelatedPost = ({ post }) => {
         }}
         className="post__relatedWrapper-boxImg">
         </div>
-        {/* <img clas="post__relatedWrapper-boxImg" src={imageUrl} alt="Related post image"/> */}
       </Link>
       <div className="post__relatedWrapper-boxBottom">
         <Link to={`/${slug}`}>

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Nav from '../components/Nav'
@@ -21,20 +20,18 @@ const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
         title={post.title}
         description={post.subtitle || post.excerpt}
       />
-      <header className="hero-section">
-        <Nav />
-      </header>
-        <section class="blogpost-section container">
-          <BlogPost
-            title={post.title}
-            subtitle={post.subtitle}
-            author={post.author}
-            content={post.content}
-            imageUrl={post.image.fluid.src}
-            createdAt={post.createdAt}
-            allPosts={allPosts}
-          />
-        </section>
+      <Nav />
+      <section class="blogpost-section container">
+        <BlogPost
+          title={post.title}
+          subtitle={post.subtitle}
+          author={post.author}
+          content={post.content}
+          imageUrl={post.image.fluid.src}
+          createdAt={post.createdAt}
+          allPosts={allPosts}
+        />
+      </section>
     </Layout>
   )
 }
