@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useState, useEffect }from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Nav from '../components/Nav'
@@ -23,10 +23,9 @@ const BlogIndex = ({ data, location }) => {
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber)
-
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
-  // Set posts after API call
+  // Load posts after API call
   useEffect(() => {
     setPosts(data.allContentfulPost.edges)
   }, [])

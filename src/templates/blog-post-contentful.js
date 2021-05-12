@@ -5,7 +5,7 @@ import Seo from "../components/seo"
 import Nav from '../components/Nav'
 import BlogPost from '../components/BlogPost'
 
-const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
+const BlogPostContentfulTemplate = ({ data, location }) => {
   const allPosts = data.allContentfulPost.edges
   const post = data.contentfulPost
   const siteTitle = data.site.siteMetadata?.title || `Title`

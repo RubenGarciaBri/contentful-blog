@@ -4,6 +4,7 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import RelatedPost from './RelatedPost'
 import AuthorBio from './AuthorBio'
 import { shuffle } from '../utils/helpers'
+
 const Bold = ({ children }) => <span style={{fontWeight: 'bold'}}>{children}</span>
 const Text = ({ children }) => <p style={{fontSize: '18px', lineHeight: '32px'}}>{children}</p>
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const PostCard = ({ slug, title, subtitle, category, createdAt, imageUrl}) => {
 

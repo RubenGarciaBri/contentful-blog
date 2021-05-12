@@ -24,7 +24,6 @@ const Layout = ({ location, title, children }) => {
   return (
     <>
       <div className="container" data-is-root-path={isRootPath}>
-        {/* <header className="global-header">{header}</header> */}
         <main>{children}</main> 
       </div>
       <Footer/>
