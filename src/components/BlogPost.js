@@ -26,9 +26,11 @@ const options = {
   },
 }
 
-const BlogPost = ({ title, subtitle, author, category, content, imageUrl, createdAt, allPosts}) => {
+const BlogPost = ({ title, category, content, imageUrl, createdAt, allPosts}) => {
+  // Exlude current post from the list
   const filteredPosts = allPosts.filter(post => post.node.title !== title)
-  const shuffledPosts = shuffle(filteredPosts)
+  // Randomise posts and set a maximum number of 3
+  const shuffledPosts = shuffle(filteredPosts).slice(0, 3)
 
   return (
     <>
@@ -44,8 +46,7 @@ const BlogPost = ({ title, subtitle, author, category, content, imageUrl, create
         <article className="post__content">{renderRichText(content, options)}</article>
         <small className="post__date">Published {createdAt}</small>
         <AuthorBio />
-      </article>
-      
+      </article>   
       <div className="post__related">
         <h4 className="post__relatedHeading">Related Posts</h4>
         <div className="post__relatedWrapper">

@@ -1,5 +1,6 @@
 .postCard {
   position: relative;
+  max-height: 300px;
   display: flex;
   box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08),
   0 6px 6px rgba(0, 0, 0, 0.08);
@@ -8,10 +9,14 @@
   overflow: hidden;
   background: #fff;
 
-    @include respond(phone) {
-      flex-direction: column;
-      height: 500px;
-    }
+  @include respond(tab-land) {
+    max-height: none;
+  }
+
+  @include respond(phone) {
+    flex-direction: column;
+    height: 500px;
+  }
 
     &:not(:last-child) {
       margin-bottom: 25px;;
@@ -38,7 +43,7 @@
 
   &__right {
     flex-basis: 65%;
-    padding: 32px 20px 20px 33px;
+    padding: 27px 16px 16px 27px;
     position: relative;
 
     @include respond(tab-land) {
@@ -55,17 +60,19 @@
     color: $secondary-color;
     letter-spacing: 1px;
     font-size: 1.6rem;
-    margin-bottom: 0px;
+    margin-bottom: 4px;
   }
 
   &__title {
     font-weight: 800;
+    line-height: 1;
     text-transform: uppercase;
     margin-bottom: 3px;
   }
 
   &__text {
     margin-bottom: 16px;
+    font-size: 14px;
   }
 
   &__btn {
@@ -74,6 +81,10 @@
     color: #fff;
     font-size: 1.4rem;
     margin-bottom: 20px;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   &__date {

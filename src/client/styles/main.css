@@ -192,12 +192,6 @@ p {
   padding: 0;
 }
 
-@media (max-width: 56.25em) {
-  .bio__right-list {
-    justify-content: center;
-  }
-}
-
 .bio__right-list__item-icon {
   margin: 0 4px;
   font-size: 2.8rem;
@@ -268,6 +262,13 @@ p {
 
 .post__relatedHeading {
   margin-bottom: 15px;
+}
+
+@media (max-width: 56.25em) {
+  .post__relatedHeading {
+    text-align: center;
+    margin-bottom: 25px;
+  }
 }
 
 .post__relatedWrapper {
@@ -509,14 +510,25 @@ p {
   outline: none;
 }
 
+.hero__btn:hover {
+  color: #efdac1;
+}
+
 .postCard {
   position: relative;
+  max-height: 300px;
   display: flex;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08), 0 6px 6px rgba(0, 0, 0, 0.08);
   background-size: cover;
   border-radius: 3px;
   overflow: hidden;
   background: #fff;
+}
+
+@media (max-width: 75em) {
+  .postCard {
+    max-height: none;
+  }
 }
 
 @media (max-width: 37.5em) {
@@ -553,7 +565,7 @@ p {
 
 .postCard__right {
   flex-basis: 65%;
-  padding: 32px 20px 20px 33px;
+  padding: 27px 16px 16px 27px;
   position: relative;
 }
 
@@ -574,17 +586,19 @@ p {
   color: #b67c72;
   letter-spacing: 1px;
   font-size: 1.6rem;
-  margin-bottom: 0px;
+  margin-bottom: 4px;
 }
 
 .postCard__title {
   font-weight: 800;
+  line-height: 1;
   text-transform: uppercase;
   margin-bottom: 3px;
 }
 
 .postCard__text {
   margin-bottom: 16px;
+  font-size: 14px;
 }
 
 .postCard__btn {
@@ -593,6 +607,10 @@ p {
   color: #fff;
   font-size: 1.4rem;
   margin-bottom: 20px;
+}
+
+.postCard__btn:hover {
+  color: #efdac1;
 }
 
 .postCard__date {

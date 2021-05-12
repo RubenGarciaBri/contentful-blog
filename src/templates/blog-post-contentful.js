@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Nav from '../components/Nav'
@@ -9,11 +9,7 @@ const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
   const allPosts = data.allContentfulPost.edges
   const post = data.contentfulPost
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previousPost, nextPost } = pageContext
-  const image = `http:${data.contentfulPost.image.fluid.src}`
 
-  console.log(pageContext)
-  
   return (
     <Layout location={location} title={siteTitle}>
       <Seo
@@ -25,7 +21,6 @@ const BlogPostContentfulTemplate = ({ pageContext, data, location }) => {
         <BlogPost
           title={post.title}
           subtitle={post.subtitle}
-          author={post.author}
           content={post.content}
           imageUrl={post.image.fluid.src}
           createdAt={post.createdAt}
@@ -52,7 +47,6 @@ export const pageQuery = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title
       subtitle
-      author
       category  
       createdAt(fromNow: true)
       image {

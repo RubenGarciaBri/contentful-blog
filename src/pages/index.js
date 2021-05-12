@@ -70,7 +70,6 @@ const BlogIndex = ({ data, location }) => {
                 slug={post.node.slug}
                 title={post.node.title}
                 subtitle={post.node.subtitle}
-                author={post.node.author}
                 category={post.node.category}
                 createdAt={post.node.createdAt}
                 imageUrl={post.node.image.fluid.src}
@@ -116,7 +115,6 @@ export const pageQuery = graphql`
         node {
           title
           subtitle
-          author
           slug
           category
           createdAt(fromNow: true)

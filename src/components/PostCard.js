@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
 
-const PostCard = ({ slug, author, title, subtitle, category, createdAt, imageUrl, content}) => {
+const PostCard = ({ slug, title, subtitle, category, createdAt, imageUrl}) => {
 
   return (
     <div className="postCard">

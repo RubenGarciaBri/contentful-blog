@@ -111,6 +111,10 @@
     background-color: $terciary-color;
     font-size: 1.4rem;
     outline: none;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
 }

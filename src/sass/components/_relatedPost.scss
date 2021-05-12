@@ -3,6 +3,11 @@
 
   &Heading {
     margin-bottom: 15px;
+
+    @include respond(tab-port) {
+      text-align: center;
+      margin-bottom: 25px;
+    }
   }
 
   &Wrapper {
