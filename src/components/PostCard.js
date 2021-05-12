@@ -17,7 +17,7 @@ const PostCard = ({ slug, title, subtitle, category, createdAt, imageUrl}) => {
       <div className="postCard__right">
         <h5 className="postCard__category">{category}</h5>
         <h4 className="postCard__title">
-          <Link to="#">
+          <Link to={`/${slug}`}>
             {title}
           </Link>
         </h4>
