@@ -1,6 +1,11 @@
 .post__related {
   padding: 0 50px 50px 50px;
 
+  @include respond(tab-port) {
+    padding: 0;
+    margin: 50px 0;
+  }
+
   &Heading {
     margin-bottom: 15px;
 

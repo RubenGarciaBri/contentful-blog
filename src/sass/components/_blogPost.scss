@@ -10,7 +10,7 @@
   background-repeat: no-repeat;
 
   @include respond(phone) {
-    height: 200px;
+    height: 300px;
   }
 }
 
@@ -19,12 +19,17 @@
   top: -85px;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08),
+  box-shadow: 0 10px 20px hsla(0, 0%, 26%, 0.08),
     0 6px 6px rgba(0, 0, 0, 0.08);
   background-color: #fff;
   border-radius: 3px;
   overflow: hidden;
   padding: 50px 75px;
+
+  @include respond(phone) {
+    top: 0;
+    width: 100%;
+  }
 
   @include respond(tab-port) {
     padding: 20px;
@@ -33,6 +38,10 @@
   &__title {
     text-transform: uppercase;
     margin-bottom: 10px;
+
+    @include respond(tab-port) {
+      margin-top: 10px;
+    }
   }
 
   &__content{
