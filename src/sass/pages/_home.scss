@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 25px;
-  row-gap: 50px;
+  row-gap: 30px;
   grid-template-areas:
     "blog blog sidebar"
     "blog blog sidebar"
@@ -38,7 +38,8 @@
   grid-area: cta;
   padding: 50px 0;
   background: $secondary-color;
-  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08);
+  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.08),
+  0 6px 6px rgba(0, 0, 0, 0.08);
   margin-bottom: 50px;
   border-radius: 3px;
 }

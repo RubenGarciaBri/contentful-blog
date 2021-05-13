@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import profileImg from '../images/profile.jpg'
 import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa"
 
@@ -15,16 +15,31 @@ const Sidebar = ({ title, description }) => {
           </p>
           <ul className="sidebarTop__socialList">
             <li className="sidebarTop__socialList-item">
-              <Link to="#"><FaFacebookSquare
-                  className="fab fa-facebook sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-facebook"></FaFacebookSquare></Link>
+              <Link to="#">
+                <FaFacebookSquare
+                className="sidebarTop__socialList-itemIcon"
+                color="#0674E7"
+                size={'2.8rem'}>
+                </FaFacebookSquare>
+              </Link>
             </li>
             <li className="sidebarTop__socialList-item">
-              <Link to="#"><FaTwitterSquare
-                  className="fab fa-linkedin sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-linkedin"></FaTwitterSquare></Link>
+              <Link to="#">
+                <FaTwitterSquare
+                className="sidebarTop__socialList-itemIcon"
+                color="#0077b5"
+                size={'2.8rem'}>
+                </FaTwitterSquare>
+              </Link>
             </li>
             <li className="sidebarTop__socialList-item">
-              <Link to="#"><FaYoutubeSquare
-                  className="fab fa-youtube sidebarTop__socialList-itemIcon sidebarTop__socialList-itemIcon-youtube"></FaYoutubeSquare></Link>
+              <Link to="#">
+                <FaYoutubeSquare
+                className="sidebarTop__socialList-itemIcon"
+                color="#FF0000"
+                size={'2.8rem'}>
+                </FaYoutubeSquare>
+              </Link>
             </li>
           </ul>
         </div>

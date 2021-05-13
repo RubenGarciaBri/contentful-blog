@@ -1,8 +1,7 @@
 /* Font Imports */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
 
 *,
 *::before,
@@ -111,4 +110,20 @@ img {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.btn {
+  &:hover {
+    color: #ccc;
+  }
+}
+
+a {
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+p {
+  padding: 0;
 }

@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
-import Bio from "../components/bio"
+import { useState, useEffect }from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Nav from '../components/Nav'
@@ -8,13 +8,28 @@ import Header from '../components/Header'
 import PostCard from '../components/PostCard'
 import Sidebar from '../components/Sidebar'
 import CallToAction from '../components/CallToAction'
-import Pager from '../components/Pager'
-import AllPosts from '../templates/allPosts'
+import Pagination from '../components/Pagination'
+
 
 const BlogIndex = ({ data, location }) => {
+  const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(3);
+
+  // Get current posts
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber)
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allContentfulPost.edges
-  console.log(posts)
+
+  // Load posts after API call
+  useEffect(() => {
+    setPosts(data.allContentfulPost.edges)
+  }, [])
+
 
   if (posts.length === 0) {
     return (
@@ -38,19 +53,39 @@ const BlogIndex = ({ data, location }) => {
       <header className="hero-section">
         <Nav />
         <Header 
-          title='Living a Mindful Life'
+          title='Mindful Living'
           subtitle="A personal development blog about travel, wellness and life hacking that you'll love"
           cta='Subscribe Now'
         />
       </header>
       <div className="home-grid">
         <section className="blog-section">
-          <AllPosts />
+          {currentPosts.map(post => {
+            return (
+              <PostCard
+                key={post.node.slug}
+                itemScope
+                itemType="http://schema.org/Article"
+                slug={post.node.slug}
+                title={post.node.title}
+                subtitle={post.node.subtitle}
+                category={post.node.category}
+                createdAt={post.node.createdAt}
+                imageUrl={post.node.image.fluid.src}
+                content={post.node.content}
+              />
+            )
+          })}
+        <Pagination
+          postsPerPage={postsPerPage}
+          totalPosts={posts.length}
+          paginate={paginate}
+        />
         </section>
         <aside className="sidebar-section">
           <Sidebar
             title='About Me'
-            description="Hi, I'm Marina and I'm a full time writter at FashionNow magazine. I've recently started this blog as a personal project to share my thoughts on travel, fitness, fashion and lifetime in general."
+            description="Hi, my name is Marina and I'm a full-time journalist and fashion expert. I've recently started this blog to share my message with the world."
           />
         </aside>
         <section className="cta-section">
@@ -79,7 +114,6 @@ export const pageQuery = graphql`
         node {
           title
           subtitle
-          author
           slug
           category
           createdAt(fromNow: true)
@@ -87,6 +121,9 @@ export const pageQuery = graphql`
             fluid {
               src
             }
+          }
+          content {
+            raw
           }
         }
       }

@@ -1,4 +1,5 @@
 .cta {
+
   &-wrapper {
     max-width: 650px;
     margin: 0 auto;
@@ -8,16 +9,19 @@
   &__heading {
     text-transform: uppercase;
     color: #fff;
+    margin-bottom: 10px;
   }
 
   &__text {
     color: $primary-color;
     padding: 0 20px;
+    margin-bottom: 12px;
   }
 
   &__btn {
     background: $terciary-color;
     color: #fff;
     margin-top: 10px;
+    font-size: 1.4rem;
   }
 }

@@ -1,5 +1,5 @@
 const path = require(`path`)
-import { paginate } from 'gatsby-awesome-pagination'
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             node {
               slug
               title
+              id
             }
           }
         }
@@ -39,8 +40,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
       // // Create paginated pages for posts
       // const postPerPage = 3
@@ -73,8 +72,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         component: blogPost,
         context: {
           slug: post.node.slug,
-          previousPostId,
-          nextPostId,
         },
       })
     })
