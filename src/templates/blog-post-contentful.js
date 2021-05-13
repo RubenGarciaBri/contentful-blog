@@ -1,7 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-// import Seo from "../components/seo"
 import Nav from '../components/Nav'
 import BlogPost from '../components/BlogPost'
 
@@ -12,10 +11,6 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      {/* <Seo
-        title={post.title}
-        description={post.subtitle || post.excerpt}
-      /> */}
       <Nav />
       <section class="blogpost-section container">
         <BlogPost
