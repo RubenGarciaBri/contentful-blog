@@ -130,32 +130,3 @@ export const pageQuery = graphql`
     }  
   }
 `
-
-// Delete later!!
-// <ol style={{ listStyle: `none` }}>
-//         {posts.map(post => {
-//           const title = post.node.title || post.node.slug
-          
-//           return (
-//             <li key={post.node.slug}>
-//               <article
-//                 classNameName="post-list-item"
-//                 itemScope
-//                 itemType="http://schema.org/Article"
-//               >
-//                 <header>
-//                   <h2>
-//                     <Link to={post.node.slug} itemProp="url">
-//                       <span itemProp="headline">{title}</span>
-//                     </Link>
-//                   </h2>
-//                   <small>{post.frontmatter.date}</small>
-//                 </header>
-//                 <section>
-//                   <p>{post.node.subtitle}</p>
-//                 </section>
-//               </article>
-//             </li>
-//           )
-//         })}
-//       </ol>
