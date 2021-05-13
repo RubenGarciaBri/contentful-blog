@@ -2,7 +2,7 @@ import * as React from "react"
 import { useState, useEffect }from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+// import Seo from "../components/seo"
 import Nav from '../components/Nav'
 import Header from '../components/Header'
 import PostCard from '../components/PostCard'
@@ -34,7 +34,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <Seo title="All posts" />
+        {/* <Seo title="All posts" /> */}
         <header className="hero-section">
           <Nav />
         </header>
@@ -49,7 +49,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo title="All posts" />
+      {/* <Seo title="All posts" /> */}
       <header className="hero-section">
         <Nav />
         <Header 
