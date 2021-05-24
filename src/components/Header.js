@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 
+
 const Header = ({ title, subtitle, cta}) => {
   return (
     <div className="hero container">
