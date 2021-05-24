@@ -1,13 +1,13 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Nav from "../components/Nav"
-import BlogPost from "../components/BlogPost"
+import * as React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import Nav from '../components/Nav';
+import BlogPost from '../components/BlogPost';
 
 const BlogPostContentfulTemplate = ({ data, location }) => {
-  const allPosts = data.allContentfulPost.edges
-  const post = data.contentfulPost
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const allPosts = data.allContentfulPost.edges;
+  const post = data.contentfulPost;
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,10 +23,10 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
         />
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogPostContentfulTemplate
+export default BlogPostContentfulTemplate;
 
 export const pageQuery = graphql`
   query ContentfulBlogPostBySlug(
@@ -84,4 +84,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

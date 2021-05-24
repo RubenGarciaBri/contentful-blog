@@ -1,16 +1,16 @@
-import React from "react"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
-import RelatedPost from "./RelatedPost"
-import AuthorBio from "./AuthorBio"
-import { shuffle } from "../utils/helpers"
+import React from 'react';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { renderRichText } from 'gatsby-source-contentful/rich-text';
+import RelatedPost from './RelatedPost';
+import AuthorBio from './AuthorBio';
+import { shuffle } from '../utils/helpers';
 
 const Bold = ({ children }) => (
-  <span style={{ fontWeight: "bold" }}>{children}</span>
-)
+  <span style={{ fontWeight: 'bold' }}>{children}</span>
+);
 const Text = ({ children }) => (
-  <p style={{ fontSize: "18px", lineHeight: "32px" }}>{children}</p>
-)
+  <p style={{ fontSize: '18px', lineHeight: '32px' }}>{children}</p>
+);
 
 const options = {
   renderMark: {
@@ -26,10 +26,10 @@ const options = {
             <code>{JSON.stringify(node, null, 2)}</code>
           </pre>
         </>
-      )
+      );
     },
   },
-}
+};
 
 const BlogPost = ({
   title,
@@ -40,9 +40,9 @@ const BlogPost = ({
   allPosts,
 }) => {
   // Exlude current post from the list
-  const filteredPosts = allPosts.filter(post => post.node.title !== title)
+  const filteredPosts = allPosts.filter(post => post.node.title !== title);
   // Randomise posts and set a maximum number of 3
-  const shuffledPosts = shuffle(filteredPosts).slice(0, 3)
+  const shuffledPosts = shuffle(filteredPosts).slice(0, 3);
 
   return (
     <>
@@ -65,12 +65,12 @@ const BlogPost = ({
         <h4 className="post__relatedHeading">Related Posts</h4>
         <div className="post__relatedWrapper">
           {shuffledPosts.map(post => {
-            return <RelatedPost post={post} />
+            return <RelatedPost post={post} />;
           })}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;

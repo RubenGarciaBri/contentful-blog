@@ -1,12 +1,12 @@
-import * as React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import profilePicture from "../images/profile-rounded.jpg"
+import * as React from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import profilePicture from '../images/profile-rounded.jpg';
 import {
   FaFacebookSquare,
   FaTwitterSquare,
   FaYoutubeSquare,
-} from "react-icons/fa"
+} from 'react-icons/fa';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -23,10 +23,10 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
+  const author = data.site.siteMetadata?.author;
 
   return (
     <div className="bio">
@@ -50,7 +50,7 @@ const Bio = () => {
                 <FaFacebookSquare
                   className="bio__right-list__item-icon"
                   color="#0674E7"
-                  size={"2.6rem"}
+                  size={'2.6rem'}
                 ></FaFacebookSquare>
               </Link>
             </li>
@@ -59,7 +59,7 @@ const Bio = () => {
                 <FaTwitterSquare
                   className="bio__right-list__item-icon"
                   color="#0077b5"
-                  size={"2.6rem"}
+                  size={'2.6rem'}
                 ></FaTwitterSquare>
               </Link>
             </li>
@@ -68,7 +68,7 @@ const Bio = () => {
                 <FaYoutubeSquare
                   className="bio__right-list__item-icon"
                   color="#FF0000"
-                  size={"2.6rem"}
+                  size={'2.6rem'}
                 ></FaYoutubeSquare>
               </Link>
             </li>
@@ -76,7 +76,7 @@ const Bio = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Bio
+export default Bio;

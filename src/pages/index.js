@@ -1,14 +1,13 @@
-import * as React from "react"
-import { useState, useEffect }from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Nav from '../components/Nav'
-import Header from '../components/Header'
-import PostCard from '../components/PostCard'
-import Sidebar from '../components/Sidebar'
-import CallToAction from '../components/CallToAction'
-import Pagination from '../components/Pagination'
-
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/layout';
+import Nav from '../components/Nav';
+import Header from '../components/Header';
+import PostCard from '../components/PostCard';
+import Sidebar from '../components/Sidebar';
+import CallToAction from '../components/CallToAction';
+import Pagination from '../components/Pagination';
 
 const BlogIndex = ({ data, location }) => {
   const [posts, setPosts] = useState([]);
@@ -18,59 +17,58 @@ const BlogIndex = ({ data, location }) => {
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber)
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   // Load posts after API call
   useEffect(() => {
-    setPosts(data.allContentfulPost.edges)
-  }, [])
-
+    setPosts(data.allContentfulPost.edges);
+  }, []);
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
         <header className="hero-section">
           <Nav />
-          <Header 
-            title='Mindful Living'
+          <Header
+            title="Mindful Living"
             subtitle="A personal development blog about travel, wellness and life hacking that you'll love"
-            cta='Subscribe Now'
+            cta="Subscribe Now"
           />
         </header>
         <div className="home-grid">
-        <section className="blog-section">
-          <p>Loading posts...</p>
-        </section>
-        <aside className="sidebar-section">
-          <Sidebar
-            title='About Me'
-            description="Hi, my name is Marina and I'm a full-time journalist and fashion expert. I've recently started this blog to share my message with the world."
-          />
-        </aside>
-        <section className="cta-section">
-          <CallToAction
-            title='Ready to level up your life?'
-            subtitle='Click on the button below and receive my weekly newsletter with the best content of the blog'
-            cta='Subscribe Now'
-          />
-        </section>
-      </div>
+          <section className="blog-section">
+            <p>Loading posts...</p>
+          </section>
+          <aside className="sidebar-section">
+            <Sidebar
+              title="About Me"
+              description="Hi, my name is Marina and I'm a full-time journalist and fashion expert. I've recently started this blog to share my message with the world."
+            />
+          </aside>
+          <section className="cta-section">
+            <CallToAction
+              title="Ready to level up your life?"
+              subtitle="Click on the button below and receive my weekly newsletter with the best content of the blog"
+              cta="Subscribe Now"
+            />
+          </section>
+        </div>
       </Layout>
-    )
+    );
   }
 
   return (
     <Layout location={location} title={siteTitle}>
       <header className="hero-section">
         <Nav />
-        <Header 
-          title='Mindful Living'
+        <Header
+          title="Mindful Living"
           subtitle="A personal development blog about travel, wellness and life hacking that you'll love"
-          cta='Subscribe Now'
+          cta="Subscribe Now"
         />
       </header>
       <div className="home-grid">
@@ -89,33 +87,33 @@ const BlogIndex = ({ data, location }) => {
                 imageUrl={post.node.image.fluid.src}
                 content={post.node.content}
               />
-            )
+            );
           })}
-        <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
-          paginate={paginate}
-        />
+          <Pagination
+            postsPerPage={postsPerPage}
+            totalPosts={posts.length}
+            paginate={paginate}
+          />
         </section>
         <aside className="sidebar-section">
           <Sidebar
-            title='About Me'
+            title="About Me"
             description="Hi, my name is Marina and I'm a full-time journalist and fashion expert. I've recently started this blog to share my message with the world."
           />
         </aside>
         <section className="cta-section">
           <CallToAction
-            title='Ready to level up your life?'
-            subtitle='Click on the button below and receive my weekly newsletter with the best content of the blog'
-            cta='Subscribe Now'
+            title="Ready to level up your life?"
+            subtitle="Click on the button below and receive my weekly newsletter with the best content of the blog"
+            cta="Subscribe Now"
           />
         </section>
-      </div>      
+      </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -142,6 +140,6 @@ export const pageQuery = graphql`
           }
         }
       }
-    }  
+    }
   }
-`
+`;

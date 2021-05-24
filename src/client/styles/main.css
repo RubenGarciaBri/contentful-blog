@@ -11,7 +11,8 @@
 }
 
 body {
-  font-family: 'Merriweather', serif;
+  font-family: 'Merriweather',
+ serif;
   -webkit-font-smoothing: antialiased;
   background: whitesmoke;
   line-height: 1.7;
@@ -53,7 +54,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Karla',
+ sans-serif;
   font-weight: 700;
   line-height: 1.3;
   color: #222;
@@ -132,12 +134,16 @@ p {
   grid-template-rows: auto;
   column-gap: 25px;
   row-gap: 30px;
-  grid-template-areas: "blog blog sidebar" "blog blog sidebar" "cta cta cta";
+  grid-template-areas: "blog blog sidebar"
+ "blog blog sidebar"
+ "cta cta cta";
 }
 
 @media (max-width: 56.25em) {
   .home-grid {
-    grid-template-areas: "blog blog blog" "sidebar sidebar sidebar" "cta cta cta";
+    grid-template-areas: "blog blog blog"
+ "sidebar sidebar sidebar"
+ "cta cta cta";
   }
 }
 
@@ -414,7 +420,8 @@ p {
 }
 
 .logo {
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Permanent Marker',
+ cursive;
   font-size: 28px;
   font-weight: 800;
   text-transform: capitalize;
