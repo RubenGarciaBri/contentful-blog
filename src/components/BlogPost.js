@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react"
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import RelatedPost from './RelatedPost'
-import AuthorBio from './AuthorBio'
-import { shuffle } from '../utils/helpers'
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import RelatedPost from "./RelatedPost"
+import AuthorBio from "./AuthorBio"
+import { shuffle } from "../utils/helpers"
 
-const Bold = ({ children }) => <span style={{fontWeight: 'bold'}}>{children}</span>
-const Text = ({ children }) => <p style={{fontSize: '18px', lineHeight: '32px'}}>{children}</p>
+const Bold = ({ children }) => (
+  <span style={{ fontWeight: "bold" }}>{children}</span>
+)
+const Text = ({ children }) => (
+  <p style={{ fontSize: "18px", lineHeight: "32px" }}>{children}</p>
+)
 
 const options = {
   renderMark: {
@@ -27,7 +31,14 @@ const options = {
   },
 }
 
-const BlogPost = ({ title, category, content, imageUrl, createdAt, allPosts}) => {
+const BlogPost = ({
+  title,
+  category,
+  content,
+  imageUrl,
+  createdAt,
+  allPosts,
+}) => {
   // Exlude current post from the list
   const filteredPosts = allPosts.filter(post => post.node.title !== title)
   // Randomise posts and set a maximum number of 3
@@ -36,23 +47,25 @@ const BlogPost = ({ title, category, content, imageUrl, createdAt, allPosts}) =>
   return (
     <>
       <div
-      className="post-header"
-      style={{
-        backgroundImage: `url(${imageUrl})`
-      }}>
-      </div>
+        className="post-header"
+        style={{
+          backgroundImage: `url(${imageUrl})`,
+        }}
+      ></div>
       <article className="post">
         <h5 className="post__category">{category}</h5>
         <h3 className="post__title">{title}</h3>
-        <article className="post__content">{renderRichText(content, options)}</article>
+        <article className="post__content">
+          {renderRichText(content, options)}
+        </article>
         <small className="post__date">Published {createdAt}</small>
         <AuthorBio />
-      </article>   
+      </article>
       <div className="post__related">
         <h4 className="post__relatedHeading">Related Posts</h4>
         <div className="post__relatedWrapper">
           {shuffledPosts.map(post => {
-            return <RelatedPost post={post}/>
+            return <RelatedPost post={post} />
           })}
         </div>
       </div>

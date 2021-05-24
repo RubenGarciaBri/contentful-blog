@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Nav from '../components/Nav'
-import BlogPost from '../components/BlogPost'
+import Nav from "../components/Nav"
+import BlogPost from "../components/BlogPost"
 
 const BlogPostContentfulTemplate = ({ data, location }) => {
   const allPosts = data.allContentfulPost.edges
@@ -42,7 +42,7 @@ export const pageQuery = graphql`
     contentfulPost(slug: { eq: $slug }) {
       title
       subtitle
-      category  
+      category
       createdAt(fromNow: true)
       image {
         fluid {
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
           }
         }
       }
-    }  
+    }
     previous: markdownRemark(id: { eq: $previousPostId }) {
       fields {
         slug

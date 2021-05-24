@@ -1,8 +1,12 @@
 import * as React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import profilePicture from '../images/profile-rounded.jpg'
-import { FaFacebookSquare, FaTwitterSquare, FaYoutubeSquare } from 'react-icons/fa'
+import profilePicture from "../images/profile-rounded.jpg"
+import {
+  FaFacebookSquare,
+  FaTwitterSquare,
+  FaYoutubeSquare,
+} from "react-icons/fa"
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -26,14 +30,12 @@ const Bio = () => {
 
   return (
     <div className="bio">
-      <StaticImage
-        
-      />
-      <div className="bio__left"> 
+      <StaticImage />
+      <div className="bio__left">
         <img
-        className="bio__left-avatar"
-        src={profilePicture}
-        alt="Profile picture"
+          className="bio__left-avatar"
+          src={profilePicture}
+          alt="Profile picture"
         />
       </div>
       {author?.name && (
@@ -46,28 +48,28 @@ const Bio = () => {
             <li className="bio__right-list__item">
               <Link to="#">
                 <FaFacebookSquare
-                className="bio__right-list__item-icon"
-                color="#0674E7"
-                size={'2.6rem'}>
-                </FaFacebookSquare>
+                  className="bio__right-list__item-icon"
+                  color="#0674E7"
+                  size={"2.6rem"}
+                ></FaFacebookSquare>
               </Link>
             </li>
             <li className="bio__right-list__item">
               <Link to="#">
                 <FaTwitterSquare
-                className="bio__right-list__item-icon"
-                color="#0077b5"
-                size={'2.6rem'}>
-                </FaTwitterSquare>
+                  className="bio__right-list__item-icon"
+                  color="#0077b5"
+                  size={"2.6rem"}
+                ></FaTwitterSquare>
               </Link>
             </li>
             <li className="bio__right-list__item">
               <Link to="#">
                 <FaYoutubeSquare
-                className="bio__right-list__item-icon"
-                color="#FF0000"
-                size={'2.6rem'}>
-                </FaYoutubeSquare>
+                  className="bio__right-list__item-icon"
+                  color="#FF0000"
+                  size={"2.6rem"}
+                ></FaYoutubeSquare>
               </Link>
             </li>
           </ul>
