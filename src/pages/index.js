@@ -35,12 +35,30 @@ const BlogIndex = ({ data, location }) => {
       <Layout location={location} title={siteTitle}>
         <header className="hero-section">
           <Nav />
+          <Header 
+            title='Mindful Living'
+            subtitle="A personal development blog about travel, wellness and life hacking that you'll love"
+            cta='Subscribe Now'
+          />
         </header>
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        <div className="home-grid">
+        <section className="blog-section">
+          <p>Loading posts...</p>
+        </section>
+        <aside className="sidebar-section">
+          <Sidebar
+            title='About Me'
+            description="Hi, my name is Marina and I'm a full-time journalist and fashion expert. I've recently started this blog to share my message with the world."
+          />
+        </aside>
+        <section className="cta-section">
+          <CallToAction
+            title='Ready to level up your life?'
+            subtitle='Click on the button below and receive my weekly newsletter with the best content of the blog'
+            cta='Subscribe Now'
+          />
+        </section>
+      </div>
       </Layout>
     )
   }
