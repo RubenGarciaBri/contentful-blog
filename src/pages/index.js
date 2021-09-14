@@ -8,6 +8,7 @@ import PostCard from '../components/PostCard';
 import Sidebar from '../components/Sidebar';
 import CallToAction from '../components/CallToAction';
 import Pagination from '../components/Pagination';
+import MetaDecorator from '../utils/MetaDecorator';
 
 const BlogIndex = ({ data, location }) => {
   const [posts, setPosts] = useState([]);
@@ -31,6 +32,7 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
+        <MetaDecorator/>
         <header className="hero-section">
           <Nav />
           <Header

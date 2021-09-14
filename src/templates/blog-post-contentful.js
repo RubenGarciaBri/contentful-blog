@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Nav from '../components/Nav';
 import BlogPost from '../components/BlogPost';
+import MetaDecorator from '../utils/MetaDecorator';
 
 const BlogPostContentfulTemplate = ({ data, location }) => {
   const allPosts = data.allContentfulPost.edges;
@@ -11,6 +12,7 @@ const BlogPostContentfulTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
+      <MetaDecorator/>
       <Nav />
       <section class="blogpost-section container">
         <BlogPost
