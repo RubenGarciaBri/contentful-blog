@@ -43,15 +43,13 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          {
-            plugins: [`gatsby-plugin-react-helmet`]
-          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
       },
     },
+    'gatsby-plugin-react-helmet',
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // {
